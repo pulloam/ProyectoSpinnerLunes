@@ -25,12 +25,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void mostrarNombreEnOtraActividad(){
+        Comuna comunaUno = new Comuna();
+
+        comunaUno.setNombre("Quinta Normal");
+        comunaUno.setPoblacion(10000);
+        comunaUno.setAlcalde("Juanito Perez");
+        comunaUno.setGrupoGSE("C2");
+        comunaUno.setMt2(20000.76f);
+        comunaUno.setDireccionMunicipalidad("Los pinos oriente 1234");
+
+
         String nombre = tilNombre.getEditText().getText().toString();
 
         Intent segundaPantalla = new Intent(this,SegundaActividad.class);
         segundaPantalla.putExtra("datoNombre", nombre);
-        startActivity(segundaPantalla);
+        segundaPantalla.putExtra("datosComuna", comunaUno);
 
+        startActivity(segundaPantalla);
     }
 
 
