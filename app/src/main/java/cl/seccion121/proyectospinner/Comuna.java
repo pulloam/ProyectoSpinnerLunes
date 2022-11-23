@@ -1,5 +1,7 @@
 package cl.seccion121.proyectospinner;
 
+import androidx.annotation.NonNull;
+
 import java.io.Serializable;
 
 public class Comuna implements Serializable {
@@ -9,6 +11,12 @@ public class Comuna implements Serializable {
     private String grupoGSE;
     private float mt2;
     private String direccionMunicipalidad;
+
+    @NonNull
+    @Override
+    public String toString() {
+        return nombre + " : población -> " + poblacion;
+    }
 
     public String getDireccionMunicipalidad() {
         return direccionMunicipalidad;
